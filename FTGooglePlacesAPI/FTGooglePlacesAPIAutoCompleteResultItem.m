@@ -87,7 +87,7 @@
     _originalDictionaryRepresentation = dictionary;
     
     _placeId = [dictionary ftgp_nilledObjectForKey:@"place_id"];
-    _predictionDescription = [dictionary ftgp_nilledObjectForKey:@"descreption"];
+    _predictionDescription = [dictionary ftgp_nilledObjectForKey:@"description"];
     
     
     _types = [dictionary ftgp_nilledObjectForKey:@"types"];
