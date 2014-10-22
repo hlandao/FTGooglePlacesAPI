@@ -66,7 +66,7 @@
 {
     _htmlAttributions = [dictionary ftgp_nilledObjectForKey:@"html_attributions"];
     
-    NSArray *results = [dictionary ftgp_nilledObjectForKey:@"results"];
+    NSArray *results = [dictionary ftgp_nilledObjectForKey:@"predictions"];
     _results = [self ftgpr_parseResultsItemFromArray:results];
 }
 
