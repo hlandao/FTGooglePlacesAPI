@@ -31,6 +31,7 @@
 #import "AFNetworking.h"
 #import "FTGooglePlacesAPISearchResponse.h"
 #import "FTGooglePlacesAPIDetailResponse.h"
+#import "FTGooglePlacesAPIAutoCompleteResponse.h"
 
 
 /**
@@ -208,6 +209,38 @@ static BOOL FTGooglePlacesAPIDebugLoggingEnabled;
         }
     }];
 }
+
+
++ (void)executeAutoCompleteRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion
+{
+    [[self class] executeRequest:request withCompletionHandler:^(NSDictionary *responseObject, NSError *error) {
+        
+        //  Networing, parsing or other general error
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        //  Parse response
+        Class resultsItemClass = [[[self class] sharedService] searchResultsItemClass];
+        
+        FTGooglePlacesAPIAutoCompleteResponse *response = [[FTGooglePlacesAPIAutoCompleteResponse alloc] initWithDictionary:responseObject request:request resultsItemClass:resultsItemClass];
+        
+        FTGPServiceLog(@"%@ received Search response. Status: %@, number of results: %ld", [self class], [FTGooglePlacesAPIAutoCompleteResponse localizedNameOfStatus:response.status], (unsigned long)[response.results count]);
+        
+        // Check if everything went OK
+        if (response && response.status == FTGooglePlacesAPIResponseStatusOK) {
+            completion(response, nil);
+        }
+        // If network request was successfull, but Google Places API
+        // responded with error status code
+        else {
+            completion(response, [[self class] ftgp_errorForResponseStatus:response.status]);
+        }
+    }];
+}
+
 
 + (void)setDebugLoggingEnabled:(BOOL)enabled
 {

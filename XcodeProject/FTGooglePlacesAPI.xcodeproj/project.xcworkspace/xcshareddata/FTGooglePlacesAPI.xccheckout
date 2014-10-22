@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9FAF661C-5A84-48F0-8BD6-1CD6D904F1EA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FTGooglePlacesAPI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8DE5E0E3C11A175741C8D49C74487562DC374DB</key>
+		<string>https://github.com/hlandao/FTGooglePlacesAPI</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XcodeProject/FTGooglePlacesAPI.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8DE5E0E3C11A175741C8D49C74487562DC374DB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hlandao/FTGooglePlacesAPI</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8DE5E0E3C11A175741C8D49C74487562DC374DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8DE5E0E3C11A175741C8D49C74487562DC374DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FTGooglePlacesAPI</string>
+		</dict>
+	</array>
+</dict>
+</plist>

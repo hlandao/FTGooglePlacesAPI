@@ -87,6 +87,15 @@ typedef void (^FTGooglePlacesAPIDetailRequestCompletionhandler)(FTGooglePlacesAP
        withCompletionHandler:(FTGooglePlacesAPIDetailRequestCompletionhandler)completion;
 
 /**
+ *  Asks the service to execute the given Google Places API Places Search request.
+ *
+ *  @param request Request object implementing FTGooglePlacesAPIRequest protocol. This will probably be  FTGooglePlacesAPIAutoCompleteRequest, but you are free to provide own request implementing requred FTGooglePlacesAPIRequest protocol
+ *  @param completionBlock Completion block to be called after the request was finished. If everything went without problems, response will be non-nill and error will be nil. In case of failure, response will be nil and error will be either AFNetworking error caused by networking problem or error with FTGooglePlacesAPIErrorDomain domain indicating that the networking request was successfull, but Google Places API responded with non-OK status code
+ */
++ (void)executeAutoCompleteRequest:(id<FTGooglePlacesAPIRequest>)request
+       withCompletionHandler:(FTGooglePlacesAPISearchRequestCompletionHandler)completion;
+
+/**
  *  If set to YES and running in debug mode (#ifdef DEBUG), service will print some information
  *  info console, including:
  *    - Complete URL of request sent to Google Places API
